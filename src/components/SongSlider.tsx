@@ -1,21 +1,25 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import Slider from '@react-native-community/slider';
+
 import {useProgress} from 'react-native-track-player';
 
 const SongSlider = () => {
+  // hook from react native track player to get the positon and duration of the song
   const {position, buffered, duration} = useProgress();
+
+  console.log(`Position >> ${JSON.stringify(position)}`);
+  console.log(`Position >> ${JSON.stringify(duration)}`);
 
   return (
     <View>
-      <Slider
+      {/* <Slider
         value={position}
         minimumValue={0}
         maximumValue={duration}
         thumbTintColor="#FFF"
         maximumTrackTintColor="#FFF"
         style={styles.sliderContainer}
-      />
+      /> */}
       <View style={styles.timeContainer}>
         <Text style={styles.time}>
           {new Date(position * 1000).toISOString().substring(15, 19)}

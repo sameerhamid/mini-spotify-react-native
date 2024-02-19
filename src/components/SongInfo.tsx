@@ -6,6 +6,8 @@ type SongInfoProps = PropsWithChildren<{
   track: Track | null | undefined;
 }>;
 
+// prop the track track details to be shown
+
 const SongInfo = ({track}: SongInfoProps) => {
   return (
     <View style={styles.container}>
