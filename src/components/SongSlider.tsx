@@ -4,7 +4,8 @@ import Slider from '@react-native-community/slider';
 import {useProgress} from 'react-native-track-player';
 
 const SongSlider = () => {
-  const [position, duration] = useProgress();
+  const {position, buffered, duration} = useProgress();
+
   return (
     <View>
       <Slider
@@ -12,7 +13,7 @@ const SongSlider = () => {
         minimumValue={0}
         maximumValue={duration}
         thumbTintColor="#FFF"
-        maximumTrackImage="#FFF"
+        maximumTrackTintColor="#FFF"
         style={styles.sliderContainer}
       />
       <View style={styles.timeContainer}>
